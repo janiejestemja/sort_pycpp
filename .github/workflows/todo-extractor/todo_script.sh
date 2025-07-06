@@ -24,7 +24,7 @@ python setup.py build_ext --inplace
 cd ..
 
 echo "Executing main.py "
-main.py
+python main.py
 
 echo "Running main workflow"
 python .github/workflows/todo-extractor/main.py
