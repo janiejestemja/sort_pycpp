@@ -43,7 +43,7 @@ def main():
                 update_issue(repo, token, issue["number"], fields={"state": "open", "body": desc})
 
     if found_todos == False: 
-        print(f"Create todo list issue #{issue["number"]}")
+        print(f"Creating new Todos issue.")
         create_issue(repo, token, title="Todos", body=desc)
     # todo!("Add more inline comments.")
     # reopen_issue(repo, token, 1)
