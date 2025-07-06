@@ -4,7 +4,7 @@ import json
 import urllib.request
 
 from todo_context import TodoContext
-from gethub import get_issues, close_issue, reopen_issue, update_issue
+from gethub import get_issues, close_issue, reopen_issue, update_issue, create_issue
 
 def main():
     # If nothing to do just exit
@@ -26,17 +26,25 @@ def main():
     issues = get_issues(repo, token)
 
     # Filter by title, check state, set to open, and update either way
+    found_todos = False
     for issue in issues:
         print(issue)
+        
         if issue["title"] == "Todos":
+            found_todos = True
             if issue["state"] == "open":
                 print(f"Update todo list issue #{issue["number"]}")
+                
                 update_issue(repo, token, issue["number"], fields={"body": desc})
 
             elif issue["state"] == "closed":
                 print(f"Reopen and update todo list issue #{issue["number"]}")
+                
                 update_issue(repo, token, issue["number"], fields={"state": "open", "body": desc})
 
+    if found_todos == False: 
+        print(f"Create todo list issue #{issue["number"]}")
+        create_issue(repo, token, title="Todos", body=desc)
     # todo!("Add more inline comments.")
     # reopen_issue(repo, token, 1)
     # close_issue(repo, token, 1)
