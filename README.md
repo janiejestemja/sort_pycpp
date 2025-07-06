@@ -36,5 +36,14 @@ python main.py
 
 # Todo-section
 ---
+- 2 files to do.
+- 4 expressions matched.
 
--4057
+## './.github/workflows/todo-extractor/main.py'
+- 39: 'todo!("Add more inline comments.")'
+## './.github/workflows/todo-extractor/todo_context.py'
+- 5: '// TODO: FIXME'
+- 6: '// FIXME: TODO'
+- 7: 'todo!("TODO FIXME")'
+
+-4056
