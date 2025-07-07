@@ -36,4 +36,10 @@ python main.py
 
 # Todo-section
 ---
+- 1 files to do.
+- 1 expressions matched.
 
+## './.github/workflows/todo-extractor/datex_tractor.py'
+- 47: 'todo!("Delete this testing comment.")'
+
+-4057
